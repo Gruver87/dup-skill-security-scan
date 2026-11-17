@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dup-skill-security-scan"
+version = "0.1.0"
+description = "Fail-closed security scanner + allowlist gate for Agent Skills installs"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [{ name = "Uladzimir Dabranski" }]
+keywords = ["agent-skills", "security", "allowlist", "dup-labs", "fail-closed"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.8"]
+
+[project.scripts]
+dup-skill-security-scan = "skill_security.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Gruver87/dup-skill-security-scan"
+Repository = "https://github.com/Gruver87/dup-skill-security-scan"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

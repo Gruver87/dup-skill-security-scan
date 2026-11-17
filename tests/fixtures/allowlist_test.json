@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "policy": "fail-closed",
+  "trusted_sources": ["Gruver87/dup-agent-skills"],
+  "skills": [
+    {
+      "name": "no-futures-auto",
+      "source": "Gruver87/dup-agent-skills"
+    }
+  ]
+}

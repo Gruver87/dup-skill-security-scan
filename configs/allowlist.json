@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "policy": "fail-closed",
+  "note": "Only listed skill names from trusted sources may install. Hashes optional pin.",
+  "trusted_sources": [
+    "Gruver87/dup-agent-skills",
+    "local:dup-agent-skills"
+  ],
+  "skills": [
+    {
+      "name": "radar-ops-status",
+      "source": "Gruver87/dup-agent-skills"
+    },
+    {
+      "name": "radar-live-money-gate",
+      "source": "Gruver87/dup-agent-skills"
+    },
+    {
+      "name": "no-futures-auto",
+      "source": "Gruver87/dup-agent-skills"
+    },
+    {
+      "name": "market-digest",
+      "source": "Gruver87/dup-agent-skills"
+    },
+    {
+      "name": "evidence-honesty",
+      "source": "Gruver87/dup-agent-skills"
+    },
+    {
+      "name": "radar-pwa-install",
+      "source": "Gruver87/dup-agent-skills"
+    },
+    {
+      "name": "radar-test-gate",
+      "source": "Gruver87/dup-agent-skills"
+    },
+    {
+      "name": "bot-holdout-wait",
+      "source": "Gruver87/dup-agent-skills"
+    },
+    {
+      "name": "l1-boundary",
+      "source": "Gruver87/dup-agent-skills"
+    },
+    {
+      "name": "secrets-hygiene",
+      "source": "Gruver87/dup-agent-skills"
+    }
+  ]
+}

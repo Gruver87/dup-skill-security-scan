@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -e ".[dev]"
+      - name: Ruff
+        run: python -m ruff check src tests
+      - name: Pytest
+        run: python -m pytest -q
+      - name: Good pack allow
+        run: python -m skill_security check-install tests/fixtures/good_pack --allowlist tests/fixtures/allowlist_test.json
+      - name: Bad pack refuse
+        run: |
+          if python -m skill_security check-install tests/fixtures/bad_pack --allowlist tests/fixtures/allowlist_test.json; then
+            echo "expected REFUSE" >&2
+            exit 1
+          fi
