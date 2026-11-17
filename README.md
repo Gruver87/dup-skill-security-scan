@@ -5,6 +5,9 @@
 **Org:** [DUP Labs](https://github.com/Gruver87) · **Author:** Uladzimir Dabranski  
 **Version:** `0.1.0` · Fail-closed **scanner + allowlist** for Agent Skills installs
 
+Supply-chain gate for any Agent Skills pack (not crypto-specific): heuristics +
+allowlist before install into Cursor / `.agents`.
+
 Before installing skills into Cursor / `.agents`, run this gate.
 
 | Related | Role |
@@ -13,21 +16,26 @@ Before installing skills into Cursor / `.agents`, run this gate.
 | [`dup-skills-eval`](https://github.com/Gruver87/dup-skills-eval) | Static + honesty eval |
 | [`dup-evidence-graph`](https://github.com/Gruver87/dup-evidence-graph) | Evidence claim map |
 
+## Quick demo
+
+```bash
+make demo
+# scans tests/fixtures/good_pack with --skip-allowlist
+```
+
 ## Install
 
-```powershell
-cd C:\Users\vovun\Desktop\dup-skill-security-scan
+```bash
 python -m pip install -e ".[dev]"
-.\scripts\test_all.ps1
-.\scripts\scan_agent_skills.ps1
+make test   # or: .\scripts\test_all.ps1
 ```
 
 ## CLI
 
-```powershell
-python -m skill_security scan ..\dup-agent-skills
-python -m skill_security check-install ..\dup-agent-skills
-python -m skill_security hashes ..\dup-agent-skills
+```bash
+python -m skill_security scan ../dup-agent-skills
+python -m skill_security check-install ../dup-agent-skills
+python -m skill_security hashes ../dup-agent-skills
 ```
 
 `check-install` exit `0` = ALLOW · `1` = REFUSE.
