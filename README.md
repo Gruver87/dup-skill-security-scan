@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://github.com/Gruver87">
+    <img src="https://raw.githubusercontent.com/Gruver87/Gruver87/main/assets/card-dup-skill-security-scan.png" alt="dup-skill-security-scan — Optical Pre-Install Security Analyzer" width="880" />
+  </a>
+</p>
+
 # DUP Skill Security Scan
 
 [![ci](https://github.com/Gruver87/dup-skill-security-scan/actions/workflows/ci.yml/badge.svg)](https://github.com/Gruver87/dup-skill-security-scan/actions/workflows/ci.yml)
